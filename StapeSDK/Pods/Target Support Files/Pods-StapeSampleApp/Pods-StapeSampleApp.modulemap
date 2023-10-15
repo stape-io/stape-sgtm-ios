@@ -1,0 +1,6 @@
+framework module Pods_StapeSampleApp {
+  umbrella header "Pods-StapeSampleApp-umbrella.h"
+
+  export *
+  module * { export * }
+}

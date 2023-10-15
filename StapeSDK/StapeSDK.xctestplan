@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "3EF2D879-E6A4-43B9-9E80-89CCB3BF8165",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : false
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:StapeSDK.xcodeproj",
+        "identifier" : "D9F706532ADC0893006D7530",
+        "name" : "StapeSDKTests"
+      }
+    }
+  ],
+  "version" : 1
+}
