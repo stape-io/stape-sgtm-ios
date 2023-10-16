@@ -16,6 +16,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         print("Stape loaded, version: \(Stape.version())")
         
+        if let url = URL(string: "https://stape.io") {
+            let c = Stape.Configuration(host: url)
+        }
+        
         return true
     }
 

@@ -178,8 +178,8 @@
 			isa = PBXGroup;
 			children = (
 				D9F7064D2ADC0893006D7530 /* StapeSDK.h */,
-				D9F7064E2ADC0893006D7530 /* StapeSDK.docc */,
 				D9F7068E2ADC0E6D006D7530 /* Stape.swift */,
+				D9F7064E2ADC0893006D7530 /* StapeSDK.docc */,
 			);
 			path = StapeSDK;
 			sourceTree = "<group>";
