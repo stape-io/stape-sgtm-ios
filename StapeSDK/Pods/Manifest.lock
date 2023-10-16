@@ -1,3 +1,20 @@
-PODFILE CHECKSUM: 46ad4af5ea56f09973f06287f27124f3d005f8c6
+PODS:
+  - InstantMock (2.5.6)
+  - Nimble (13.0.0)
+
+DEPENDENCIES:
+  - InstantMock
+  - Nimble
+
+SPEC REPOS:
+  trunk:
+    - InstantMock
+    - Nimble
+
+SPEC CHECKSUMS:
+  InstantMock: b260f33162953414cbac05d31253e600c2467b12
+  Nimble: 97d90931cca412a23224ff29e258809f75c258f7
+
+PODFILE CHECKSUM: 1c9d26c6db4b9dddf666bd38d7fb5368e0de0f20
 
 COCOAPODS: 1.13.0

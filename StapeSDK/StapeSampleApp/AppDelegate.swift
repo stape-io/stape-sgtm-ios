@@ -13,12 +13,13 @@ import StapeSDK
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
-        print("Stape loaded, version: \(Stape.version())")
-        
+                
         if let url = URL(string: "https://stape.io") {
-            let c = Stape.Configuration(host: url)
+            let c = Stape.Configuration(domain: url)
+            Stape.start(configuration: c)
         }
+        
+        Stape.send(event: Stape.Event(name: "foo", payload: ["bar": "baz"]))
         
         return true
     }
