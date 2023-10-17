@@ -38,12 +38,8 @@ public class Stape {
         case idle
         
         func handleStart(configuration: Configuration, stape: Stape) -> State {
-            if case State.idle = self {
-                stape.apiCLient.connect(configuration: configuration)
-                return .running(configuration)
-            }
-            
-            return self
+            stape.apiCLient.config = configuration
+            return .running(configuration)
         }
         
         func handleEvent(_ event: Event, stape: Stape) -> State {

@@ -11,6 +11,8 @@
 		8220A501A1FDFC829EC3AC1C /* Pods_StapeSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23653AB68CDDF463DFC32E30 /* Pods_StapeSDK.framework */; };
 		CDF78B3B490F8BA812295825 /* Pods_StapeSampleApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1200A51B92D7015FE13130E /* Pods_StapeSampleApp.framework */; };
 		D94F1BDC2ADDE84200DB8180 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94F1BDB2ADDE84200DB8180 /* APIClient.swift */; };
+		D98E67AE2ADED7A700A07D57 /* EventSendOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98E67AD2ADED7A700A07D57 /* EventSendOperation.swift */; };
+		D98E67B02ADED93600A07D57 /* EventQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98E67AF2ADED93600A07D57 /* EventQueue.swift */; };
 		D9F7064F2ADC0893006D7530 /* StapeSDK.docc in Sources */ = {isa = PBXBuildFile; fileRef = D9F7064E2ADC0893006D7530 /* StapeSDK.docc */; };
 		D9F7065C2ADC0893006D7530 /* StapeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F7065B2ADC0893006D7530 /* StapeTests.swift */; };
 		D9F7065D2ADC0893006D7530 /* StapeSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = D9F7064D2ADC0893006D7530 /* StapeSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -72,6 +74,8 @@
 		B1200A51B92D7015FE13130E /* Pods_StapeSampleApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StapeSampleApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B442E1F57118C723D5B08434 /* Pods-StapeSDK_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StapeSDK_Example.debug.xcconfig"; path = "Target Support Files/Pods-StapeSDK_Example/Pods-StapeSDK_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		D94F1BDB2ADDE84200DB8180 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		D98E67AD2ADED7A700A07D57 /* EventSendOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventSendOperation.swift; sourceTree = "<group>"; };
+		D98E67AF2ADED93600A07D57 /* EventQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventQueue.swift; sourceTree = "<group>"; };
 		D9F7064B2ADC0893006D7530 /* StapeSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = StapeSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9F7064D2ADC0893006D7530 /* StapeSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StapeSDK.h; sourceTree = "<group>"; };
 		D9F7064E2ADC0893006D7530 /* StapeSDK.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = StapeSDK.docc; sourceTree = "<group>"; };
@@ -179,10 +183,12 @@
 		D9F7064C2ADC0893006D7530 /* StapeSDK */ = {
 			isa = PBXGroup;
 			children = (
+				D9F7064E2ADC0893006D7530 /* StapeSDK.docc */,
 				D9F7064D2ADC0893006D7530 /* StapeSDK.h */,
 				D9F7068E2ADC0E6D006D7530 /* Stape.swift */,
-				D9F7064E2ADC0893006D7530 /* StapeSDK.docc */,
 				D94F1BDB2ADDE84200DB8180 /* APIClient.swift */,
+				D98E67AD2ADED7A700A07D57 /* EventSendOperation.swift */,
+				D98E67AF2ADED93600A07D57 /* EventQueue.swift */,
 			);
 			path = StapeSDK;
 			sourceTree = "<group>";
@@ -451,6 +457,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D98E67AE2ADED7A700A07D57 /* EventSendOperation.swift in Sources */,
+				D98E67B02ADED93600A07D57 /* EventQueue.swift in Sources */,
 				D9F7064F2ADC0893006D7530 /* StapeSDK.docc in Sources */,
 				D9F7068F2ADC0E6D006D7530 /* Stape.swift in Sources */,
 				D94F1BDC2ADDE84200DB8180 /* APIClient.swift in Sources */,
