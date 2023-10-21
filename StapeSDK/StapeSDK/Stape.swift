@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import os
 
 public class Stape {
     public struct Configuration {
@@ -52,6 +53,8 @@ public class Stape {
     }
     
     static var shared: Stape = { return Stape(apiCLient: APIClient()) }()
+    
+    static let logger = Logger(subsystem: "com.stape.logger", category: "main")
     private var state: State = .idle
     private let apiCLient: APIClient
     
@@ -77,11 +80,5 @@ public class Stape {
     public func send(event: Event) {
         state = state.handleEvent(event, stape: self)
     }
-    
-    // MARK: - Actions
-    
-//    private func send(event: Event) {
-//        //...
-//    }
     
 }

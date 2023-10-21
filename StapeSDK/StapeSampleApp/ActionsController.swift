@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import StapeSDK
 
 class ActionsController: UITableViewController {
 
@@ -15,7 +16,10 @@ class ActionsController: UITableViewController {
 
         // Do any additional setup after loading the view.
     }
-    
+ 
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {        
+        Stape.send(event: Stape.Event(name: "foo", payload: ["bar": "baz"]))
+    }
 
     
 }

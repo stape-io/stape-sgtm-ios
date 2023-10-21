@@ -40,7 +40,7 @@ class EventSendOperation: Operation {
     }
     
     override func start() {
-        print("Starting: \(self)")
+        Stape.logger.info("Starting: \(self)")
         
         if isCancelled { return }
         processing = true
@@ -52,17 +52,18 @@ class EventSendOperation: Operation {
         
         let task = URLSession.shared.dataTask(with: request, completionHandler: { data, response, error in
             if error != nil{
-                print("Response error -> \(String(describing: error))")
+                Stape.logger.info("Response error: \(String(describing: error))")
                 return
             }
 
             do {
                 if let data = data {
                     let result = try JSONSerialization.jsonObject(with: data, options: []) as? [String:AnyObject]
-                    print("Result -> \(String(describing: result))")
+                    Stape.logger.info("Result: \(String(describing: result))")
+
                 }
             } catch {
-                print("Response serialization Error -> \(error)")
+                Stape.logger.info("Response serialization Error -> \(error)")
             }
             
             self.finish()
@@ -72,7 +73,8 @@ class EventSendOperation: Operation {
     }
     
     override func cancel() {
-        print("Finished: \(self)")
+        Stape.logger.info("Finished: \(self)")
+
         finish()
     }
     
@@ -102,7 +104,9 @@ class EventSendOperation: Operation {
             let jsonData = try JSONSerialization.data(withJSONObject: self.event.payload, options: .prettyPrinted)
             request.httpBody = jsonData
         } catch {
-            print("Failed to encode payload: \(error)")
+//            print("Failed to encode payload: \(error)")
+            Stape.logger.info("Failed to encode payload: \(error)")
+
             return nil
         }
         
