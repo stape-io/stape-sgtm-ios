@@ -3,7 +3,7 @@
 //  StapeSDK
 //
 //  Created by Deszip on 15.10.2023.
-//  Copyright © 2023 CocoaPods. All rights reserved.
+//  Copyright © 2023 Stape. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -14,6 +14,4 @@ FOUNDATION_EXPORT double StapeSDKVersionNumber;
 //! Project version string for StapeSDK.
 FOUNDATION_EXPORT const unsigned char StapeSDKVersionString[];
 
-// In this header, you should import all the public headers of your framework using statements like #import <StapeSDK/PublicHeader.h>
-
-
+#import <StapeSDK/STFirebaseHook.h>

@@ -3,10 +3,11 @@
 //  StapeSDK
 //
 //  Created by Deszip on 15.10.2023.
-//  Copyright © 2023 CocoaPods. All rights reserved.
+//  Copyright © 2023 Stape. All rights reserved.
 //
 
 import Foundation
+import os
 
 public class Stape {
     public struct Configuration {
@@ -42,6 +43,16 @@ public class Stape {
             return .running(configuration)
         }
         
+        func handleFBHookInstall(stape: Stape) -> State {
+            STFirebaseHook.installLogEventHook { name, parameters in
+                if let name = name as? String,
+                   let payload = parameters as? [AnyHashable: AnyHashable] {
+                    Stape.send(event: Stape.Event(name: name, payload: payload))
+                }
+            }
+            return self
+        }
+        
         func handleEvent(_ event: Event, stape: Stape) -> State {
             if case State.running = self {
                 stape.apiCLient.send(event: event)
@@ -52,6 +63,8 @@ public class Stape {
     }
     
     static var shared: Stape = { return Stape(apiCLient: APIClient()) }()
+    
+    static let logger = Logger(subsystem: "com.stape.logger", category: "main")
     private var state: State = .idle
     private let apiCLient: APIClient
     
@@ -78,10 +91,12 @@ public class Stape {
         state = state.handleEvent(event, stape: self)
     }
     
-    // MARK: - Actions
+    public static func startFBTracking() {
+        shared.startFBTracking()
+    }
     
-//    private func send(event: Event) {
-//        //...
-//    }
+    public func startFBTracking() {
+        state = state.handleFBHookInstall(stape: self)
+    }
     
 }

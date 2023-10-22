@@ -13,6 +13,12 @@
 		D94F1BDC2ADDE84200DB8180 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94F1BDB2ADDE84200DB8180 /* APIClient.swift */; };
 		D98E67AE2ADED7A700A07D57 /* EventSendOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98E67AD2ADED7A700A07D57 /* EventSendOperation.swift */; };
 		D98E67B02ADED93600A07D57 /* EventQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98E67AF2ADED93600A07D57 /* EventQueue.swift */; };
+		D98E81FA2AE4409500275330 /* ActionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98E81F92AE4409500275330 /* ActionsController.swift */; };
+		D98E81FC2AE440AA00275330 /* LogsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98E81FB2AE440AA00275330 /* LogsViewController.swift */; };
+		D98E81FE2AE51F8700275330 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D98E81FD2AE51F8700275330 /* GoogleService-Info.plist */; };
+		D98E82012AE5246D00275330 /* STFirebaseHook.m in Sources */ = {isa = PBXBuildFile; fileRef = D98E81FF2AE5246D00275330 /* STFirebaseHook.m */; };
+		D98E82022AE5246D00275330 /* STFirebaseHook.h in Headers */ = {isa = PBXBuildFile; fileRef = D98E82002AE5246D00275330 /* STFirebaseHook.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D98E82042AE526AF00275330 /* STSwizzle.h in Headers */ = {isa = PBXBuildFile; fileRef = D98E82032AE526AF00275330 /* STSwizzle.h */; };
 		D9F7064F2ADC0893006D7530 /* StapeSDK.docc in Sources */ = {isa = PBXBuildFile; fileRef = D9F7064E2ADC0893006D7530 /* StapeSDK.docc */; };
 		D9F7065C2ADC0893006D7530 /* StapeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F7065B2ADC0893006D7530 /* StapeTests.swift */; };
 		D9F7065D2ADC0893006D7530 /* StapeSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = D9F7064D2ADC0893006D7530 /* StapeSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -20,7 +26,6 @@
 		D9F7066F2ADC0D34006D7530 /* StapeSDK.xctestplan in Resources */ = {isa = PBXBuildFile; fileRef = D9F7066E2ADC0D34006D7530 /* StapeSDK.xctestplan */; };
 		D9F706782ADC0E36006D7530 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F706772ADC0E36006D7530 /* AppDelegate.swift */; };
 		D9F7067A2ADC0E36006D7530 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F706792ADC0E36006D7530 /* SceneDelegate.swift */; };
-		D9F7067C2ADC0E36006D7530 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F7067B2ADC0E36006D7530 /* ViewController.swift */; };
 		D9F7067F2ADC0E36006D7530 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9F7067D2ADC0E36006D7530 /* Main.storyboard */; };
 		D9F706812ADC0E37006D7530 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9F706802ADC0E37006D7530 /* Assets.xcassets */; };
 		D9F706842ADC0E37006D7530 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9F706822ADC0E37006D7530 /* LaunchScreen.storyboard */; };
@@ -76,6 +81,12 @@
 		D94F1BDB2ADDE84200DB8180 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		D98E67AD2ADED7A700A07D57 /* EventSendOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventSendOperation.swift; sourceTree = "<group>"; };
 		D98E67AF2ADED93600A07D57 /* EventQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventQueue.swift; sourceTree = "<group>"; };
+		D98E81F92AE4409500275330 /* ActionsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionsController.swift; sourceTree = "<group>"; };
+		D98E81FB2AE440AA00275330 /* LogsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsViewController.swift; sourceTree = "<group>"; };
+		D98E81FD2AE51F8700275330 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D98E81FF2AE5246D00275330 /* STFirebaseHook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STFirebaseHook.m; sourceTree = "<group>"; };
+		D98E82002AE5246D00275330 /* STFirebaseHook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STFirebaseHook.h; sourceTree = "<group>"; };
+		D98E82032AE526AF00275330 /* STSwizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STSwizzle.h; sourceTree = "<group>"; };
 		D9F7064B2ADC0893006D7530 /* StapeSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = StapeSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9F7064D2ADC0893006D7530 /* StapeSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StapeSDK.h; sourceTree = "<group>"; };
 		D9F7064E2ADC0893006D7530 /* StapeSDK.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = StapeSDK.docc; sourceTree = "<group>"; };
@@ -86,7 +97,6 @@
 		D9F706752ADC0E36006D7530 /* StapeSampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StapeSampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9F706772ADC0E36006D7530 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D9F706792ADC0E36006D7530 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D9F7067B2ADC0E36006D7530 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D9F7067E2ADC0E36006D7530 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D9F706802ADC0E37006D7530 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D9F706832ADC0E37006D7530 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -185,6 +195,9 @@
 			children = (
 				D9F7064E2ADC0893006D7530 /* StapeSDK.docc */,
 				D9F7064D2ADC0893006D7530 /* StapeSDK.h */,
+				D98E82032AE526AF00275330 /* STSwizzle.h */,
+				D98E82002AE5246D00275330 /* STFirebaseHook.h */,
+				D98E81FF2AE5246D00275330 /* STFirebaseHook.m */,
 				D9F7068E2ADC0E6D006D7530 /* Stape.swift */,
 				D94F1BDB2ADDE84200DB8180 /* APIClient.swift */,
 				D98E67AD2ADED7A700A07D57 /* EventSendOperation.swift */,
@@ -204,13 +217,15 @@
 		D9F706762ADC0E36006D7530 /* StapeSampleApp */ = {
 			isa = PBXGroup;
 			children = (
+				D98E81FD2AE51F8700275330 /* GoogleService-Info.plist */,
 				D9F706772ADC0E36006D7530 /* AppDelegate.swift */,
 				D9F706792ADC0E36006D7530 /* SceneDelegate.swift */,
-				D9F7067B2ADC0E36006D7530 /* ViewController.swift */,
 				D9F7067D2ADC0E36006D7530 /* Main.storyboard */,
 				D9F706802ADC0E37006D7530 /* Assets.xcassets */,
 				D9F706822ADC0E37006D7530 /* LaunchScreen.storyboard */,
 				D9F706852ADC0E37006D7530 /* Info.plist */,
+				D98E81F92AE4409500275330 /* ActionsController.swift */,
+				D98E81FB2AE440AA00275330 /* LogsViewController.swift */,
 			);
 			path = StapeSampleApp;
 			sourceTree = "<group>";
@@ -222,6 +237,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D98E82042AE526AF00275330 /* STSwizzle.h in Headers */,
+				D98E82022AE5246D00275330 /* STFirebaseHook.h in Headers */,
 				D9F7065D2ADC0893006D7530 /* StapeSDK.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -277,6 +294,7 @@
 				D9F706722ADC0E36006D7530 /* Frameworks */,
 				D9F706732ADC0E36006D7530 /* Resources */,
 				D9F7068D2ADC0E41006D7530 /* Embed Frameworks */,
+				2D062A7370F7515AED678ED7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -300,6 +318,7 @@
 				TargetAttributes = {
 					D9F7064A2ADC0893006D7530 = {
 						CreatedOnToolsVersion = 15.0;
+						LastSwiftMigration = 1500;
 						ProvisioningStyle = Automatic;
 					};
 					D9F706532ADC0893006D7530 = {
@@ -356,6 +375,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9F706842ADC0E37006D7530 /* LaunchScreen.storyboard in Resources */,
+				D98E81FE2AE51F8700275330 /* GoogleService-Info.plist in Resources */,
 				D9F706812ADC0E37006D7530 /* Assets.xcassets in Resources */,
 				D9F7067F2ADC0E36006D7530 /* Main.storyboard in Resources */,
 			);
@@ -404,6 +424,34 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2D062A7370F7515AED678ED7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StapeSampleApp/Pods-StapeSampleApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/FirebaseCore/FirebaseCore.framework",
+				"${BUILT_PRODUCTS_DIR}/FirebaseCoreInternal/FirebaseCoreInternal.framework",
+				"${BUILT_PRODUCTS_DIR}/FirebaseInstallations/FirebaseInstallations.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseCoreInternal.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseInstallations.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-StapeSampleApp/Pods-StapeSampleApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		431113EB2FC3CDFD4725A1B5 /* [CP] Check Pods Manifest.lock */ = {
@@ -462,6 +510,7 @@
 				D9F7064F2ADC0893006D7530 /* StapeSDK.docc in Sources */,
 				D9F7068F2ADC0E6D006D7530 /* Stape.swift in Sources */,
 				D94F1BDC2ADDE84200DB8180 /* APIClient.swift in Sources */,
+				D98E82012AE5246D00275330 /* STFirebaseHook.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,9 +526,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D9F7067C2ADC0E36006D7530 /* ViewController.swift in Sources */,
 				D9F706782ADC0E36006D7530 /* AppDelegate.swift in Sources */,
+				D98E81FA2AE4409500275330 /* ActionsController.swift in Sources */,
 				D9F7067A2ADC0E36006D7530 /* SceneDelegate.swift in Sources */,
+				D98E81FC2AE440AA00275330 /* LogsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -625,6 +675,7 @@
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -656,6 +707,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -671,6 +723,7 @@
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
