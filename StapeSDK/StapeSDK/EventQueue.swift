@@ -2,8 +2,8 @@
 //  EventQueue.swift
 //  StapeSDK
 //
-//  Created by Deszip on 17.10.2023.
-//  Copyright © 2023 CocoaPods. All rights reserved.
+//  Created by Deszip on 15.10.2023.
+//  Copyright © 2023 Stape. All rights reserved.
 //
 
 import Foundation
@@ -13,6 +13,6 @@ class EventQueue: OperationQueue {
         op.queue = self
         super.addOperation(op)
         
-        print("Added: \(op): \(operations.count)")
+        Stape.logger.info("Added: \(op): \(self.operations.count)")
     }
 }

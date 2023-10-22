@@ -2,8 +2,8 @@
 //  EventSendOperation.swift
 //  StapeSDK
 //
-//  Created by Deszip on 17.10.2023.
-//  Copyright © 2023 CocoaPods. All rights reserved.
+//  Created by Deszip on 15.10.2023.
+//  Copyright © 2023 Stape. All rights reserved.
 //
 
 import Foundation
@@ -52,7 +52,7 @@ class EventSendOperation: Operation {
         
         let task = URLSession.shared.dataTask(with: request, completionHandler: { data, response, error in
             if error != nil{
-                Stape.logger.info("Response error: \(String(describing: error))")
+                Stape.logger.warning("Response error: \(String(describing: error))")
                 return
             }
 

@@ -20,15 +20,15 @@ class LogsViewController: UIViewController {
         Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
             do {
                 let logStore = try OSLogStore(scope: .currentProcessIdentifier)
-                let pos = logStore.position(date: Date().addingTimeInterval(-1))
-                print(pos)
+                let pos = logStore.position(date: Date().addingTimeInterval(-3600))
                 let entries = try logStore.getEntries(at: pos)
                     .compactMap { $0 as? OSLogEntryLog }
                     .filter { $0.subsystem == "com.stape.logger" }
                     .map { "[\($0.date.formatted())] [\($0.category)] \($0.composedMessage)" }
+                    .reversed()
                     .joined(separator: "\n")
 
-                self.logTextView.text = self.logTextView.text.appending(entries)
+                self.logTextView.text = entries
                 
             } catch {
                 //...
