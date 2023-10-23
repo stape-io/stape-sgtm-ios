@@ -9,6 +9,7 @@
 import Foundation
 
 class EventSendOperation: Operation {
+    
     var queue: EventQueue?
     
     private var processing: Bool {
@@ -29,19 +30,19 @@ class EventSendOperation: Operation {
     
     private let config: Stape.Configuration
     private let event: Stape.Event
+    private var completion: Stape.Completion?
     
-    init(config: Stape.Configuration, event: Stape.Event) {
+    init(config: Stape.Configuration, event: Stape.Event, completion: Stape.Completion? = nil) {
         self.processing = false
         self.operationUUID = NSUUID().uuidString
         self.config = config
         self.event = event
+        self.completion = completion
         
         super.init()
     }
     
     override func start() {
-        Stape.logger.info("Starting: \(self)")
-        
         if isCancelled { return }
         processing = true
         
@@ -51,19 +52,27 @@ class EventSendOperation: Operation {
         }
         
         let task = URLSession.shared.dataTask(with: request, completionHandler: { data, response, error in
-            if error != nil{
+            if let error = error {
                 Stape.logger.warning("Response error: \(String(describing: error))")
+                self.completion?(.failure(.networkFailure(error)))
                 return
             }
 
             do {
                 if let data = data {
-                    let result = try JSONSerialization.jsonObject(with: data, options: []) as? [String:AnyObject]
-                    Stape.logger.info("Result: \(String(describing: result))")
-
+                    if let result = try JSONSerialization.jsonObject(with: data, options: []) as? [String: AnyObject] {
+                        self.completion?(.success(Stape.EventResponse(payload: result)))
+                    } else {
+                        Stape.logger.warning("Failed to cast serialized response")
+                        self.completion?(.failure(.serializationFailure))
+                    }
+                } else {
+                    Stape.logger.warning("No data in response")
+                    self.completion?(.failure(.noData))
                 }
             } catch {
-                Stape.logger.info("Response serialization Error -> \(error)")
+                Stape.logger.warning("Response serialization error: \(error)")
+                self.completion?(.failure(.serializationFailure))
             }
             
             self.finish()
@@ -73,8 +82,6 @@ class EventSendOperation: Operation {
     }
     
     override func cancel() {
-        Stape.logger.info("Finished: \(self)")
-
         finish()
     }
     
