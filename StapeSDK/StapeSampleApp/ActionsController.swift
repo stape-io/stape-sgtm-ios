@@ -37,6 +37,10 @@ class ActionsController: UITableViewController {
     
     private func sendStapeEvent() {
         Stape.send(event: Stape.Event(name: "foo", payload: ["bar": "baz"])) { result in
+            
+            let notification = Notification(name: Notification.Name( "EventResultNotification"), object: self, userInfo: ["result" : result])
+            NotificationCenter.default.post(notification)
+            
             switch result {
             case .success(let response): print("Event sent: \(response)")
             case .failure(let error): print("Failed to send event: \(error)")
@@ -60,5 +64,4 @@ class ActionsController: UITableViewController {
           AnalyticsParameterContentType: "sample event"
         ])
     }
-    
 }

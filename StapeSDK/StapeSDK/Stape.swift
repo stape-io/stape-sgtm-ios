@@ -12,8 +12,8 @@ import os
 public class Stape {
     
     // Error types
-    public typealias Completion = (Result<Stape.EventResponse, StapeError>) -> Void
-    public enum StapeError: Error {
+    public typealias Completion = (Result<Stape.EventResponse, SendError>) -> Void
+    public enum SendError: Error {
         case networkFailure(Error)
         case serializationFailure
         case noData
