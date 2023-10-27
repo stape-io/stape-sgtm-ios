@@ -106,14 +106,13 @@ class EventSendOperation: Operation {
         var request = URLRequest(url: fullURL)
         request.httpMethod = "POST"
         request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
+        request.setValue("ios-sdk", forHTTPHeaderField: "stape-client-id")
 
         do {
             let jsonData = try JSONSerialization.data(withJSONObject: self.event.payload, options: .prettyPrinted)
             request.httpBody = jsonData
         } catch {
-//            print("Failed to encode payload: \(error)")
-            Stape.logger.info("Failed to encode payload: \(error)")
-
+            Stape.logger.warning("Failed to encode payload: \(error)")
             return nil
         }
         

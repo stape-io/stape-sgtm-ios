@@ -36,7 +36,13 @@ class ActionsController: UITableViewController {
     // MARK: - Actions
     
     private func sendStapeEvent() {
-        Stape.send(event: Stape.Event(name: "foo", payload: ["bar": "baz"]))
+        Stape.send(event: Stape.Event(name: "foo", payload: ["bar": "baz"])) { result in
+            switch result {
+            case .success(let response): print("Event sent: \(response)")
+            case .failure(let error): print("Failed to send event: \(error)")
+            }
+            
+        }
     }
     
     private func sendFBSelectContentEvent() {
