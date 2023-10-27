@@ -32,7 +32,7 @@
                                             <constraint firstAttribute="height" constant="200" id="PBd-lW-GKi"/>
                                         </constraints>
                                         <connections>
-                                            <segue destination="jIs-YK-5ED" kind="embed" id="JVe-44-8IO"/>
+                                            <segue destination="AWf-rh-llc" kind="embed" id="zQQ-nd-v3B"/>
                                         </connections>
                                     </containerView>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gk7-s5-S5k">
@@ -104,7 +104,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T2t-Kr-9Cx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="360" y="738"/>
+            <point key="canvasLocation" x="245" y="583"/>
         </scene>
         <!--Item 2-->
         <scene sceneID="F1S-rN-D7n">
@@ -234,21 +234,10 @@
             </objects>
             <point key="canvasLocation" x="-413" y="700"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="Zcs-Do-IZT">
-            <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="jIs-YK-5ED" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="4pT-wz-NvU">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="200"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6AD-4b-E7s" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="360" y="498"/>
-        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="zQQ-nd-v3B"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
