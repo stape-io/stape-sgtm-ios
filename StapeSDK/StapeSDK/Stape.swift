@@ -35,12 +35,31 @@ public class Stape {
     }
     
     public struct Event {
-        public let name: String
-        public let payload: [AnyHashable: AnyHashable]
+        public enum Key: String {
+            case clientID       = "client_id"
+            // Pls check Apple docs on IDFA:
+            // https://developer.apple.com/documentation/apptrackingtransparency?language=objc
+            case idfa           = "idfa"
+            case currency       = "currency"
+            case ipOverride     = "ip_override"
+            case language       = "language"
+            case pageEncoding   = "page_encoding"
+            case pageHostname   = "page_hostname"
+            case pageLocation   = "page_location"
+            case pagePath       = "page_path"
+        }
         
-        public init(name: String, payload: [AnyHashable : AnyHashable] = [:]) {
+        public let name: String
+        public let payload: [String: AnyHashable]
+        
+        public init(name: String, payload: [String : AnyHashable] = [:]) {
             self.name = name
             self.payload = payload
+        }
+        
+        public init(name: String, payload: [Key : AnyHashable] = [:]) {
+            self.name = name
+            self.payload = Dictionary(uniqueKeysWithValues: payload.map { ($0.key.rawValue, $0.value) })
         }
     }
     
@@ -61,7 +80,7 @@ public class Stape {
         func handleFBHookInstall(stape: Stape) -> State {
             STFirebaseHook.installLogEventHook { name, parameters in
                 if let name = name as? String,
-                   let payload = parameters as? [AnyHashable: AnyHashable] {
+                   let payload = parameters as? [String: AnyHashable] {
                     Stape.send(event: Stape.Event(name: name, payload: payload))
                 }
             }
