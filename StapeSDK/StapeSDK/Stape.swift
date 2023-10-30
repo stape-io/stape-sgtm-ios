@@ -10,6 +10,16 @@ import Foundation
 import os
 
 public class Stape {
+    
+    // Error types
+    public typealias Completion = (Result<Stape.EventResponse, SendError>) -> Void
+    public enum SendError: Error {
+        case networkFailure(Error)
+        case serializationFailure
+        case noData
+    }
+    
+    // Models
     public struct Configuration {
         let domain: URL
         let endpoint: String
@@ -34,11 +44,16 @@ public class Stape {
         }
     }
     
+    public struct EventResponse {
+        public let payload: [String: AnyObject]
+    }
+    
+    // SDK State
     private enum State {
         case running(Configuration)
         case idle
         
-        func handleStart(configuration: Configuration, stape: Stape) -> State {
+        func handleStart(_ stape: Stape, configuration: Configuration) -> State {
             stape.apiCLient.config = configuration
             return .running(configuration)
         }
@@ -53,9 +68,9 @@ public class Stape {
             return self
         }
         
-        func handleEvent(_ event: Event, stape: Stape) -> State {
+        func handleEvent(_ stape: Stape, event: Event, completion: Completion? = nil) -> State {
             if case State.running = self {
-                stape.apiCLient.send(event: event)
+                stape.apiCLient.send(event: event, completion: completion)
             }
             
             return self
@@ -80,15 +95,15 @@ public class Stape {
     }
     
     public func start(configuration: Configuration) {
-        state = state.handleStart(configuration: configuration, stape: self)
+        state = state.handleStart(self, configuration: configuration)
     }
     
-    public static func send(event: Event) {
-        shared.send(event: event)
+    public static func send(event: Event, completion: Completion? = nil) {
+        shared.send(event: event, completion: completion)
     }
     
-    public func send(event: Event) {
-        state = state.handleEvent(event, stape: self)
+    public func send(event: Event, completion: Completion? = nil) {
+        state = state.handleEvent(self, event: event, completion: completion)
     }
     
     public static func startFBTracking() {

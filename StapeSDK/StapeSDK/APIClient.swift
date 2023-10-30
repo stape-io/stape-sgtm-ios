@@ -20,9 +20,9 @@ class APIClient {
         self.eventBuffer = []
     }
     
-    public func send(event: Stape.Event) {
+    public func send(event: Stape.Event, completion: Stape.Completion? = nil) {
         if let config = self.config {
-            let op = EventSendOperation(config: config, event: event)
+            let op = EventSendOperation(config: config, event: event, completion: completion)
             self.queue.addOperation(op)
         } else {
             self.eventBuffer.append(event)

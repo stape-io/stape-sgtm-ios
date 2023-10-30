@@ -2,8 +2,8 @@
 //  LogsViewController.swift
 //  StapeSampleApp
 //
-//  Created by Deszip on 21.10.2023.
-//  Copyright © 2023 CocoaPods. All rights reserved.
+//  Created by Deszip on 15.10.2023.
+//  Copyright © 2023 Stape. All rights reserved.
 //
 
 import UIKit
@@ -23,7 +23,7 @@ class LogsViewController: UIViewController {
                 let pos = logStore.position(date: Date().addingTimeInterval(-3600))
                 let entries = try logStore.getEntries(at: pos)
                     .compactMap { $0 as? OSLogEntryLog }
-                    .filter { $0.subsystem == "com.stape.logger" }
+//                    .filter { $0.subsystem == "com.stape.logger" }
                     .map { "[\($0.date.formatted())] [\($0.category)] \($0.composedMessage)" }
                     .reversed()
                     .joined(separator: "\n")

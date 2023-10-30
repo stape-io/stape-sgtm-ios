@@ -19,6 +19,8 @@
 		D98E82012AE5246D00275330 /* STFirebaseHook.m in Sources */ = {isa = PBXBuildFile; fileRef = D98E81FF2AE5246D00275330 /* STFirebaseHook.m */; };
 		D98E82022AE5246D00275330 /* STFirebaseHook.h in Headers */ = {isa = PBXBuildFile; fileRef = D98E82002AE5246D00275330 /* STFirebaseHook.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D98E82042AE526AF00275330 /* STSwizzle.h in Headers */ = {isa = PBXBuildFile; fileRef = D98E82032AE526AF00275330 /* STSwizzle.h */; };
+		D98E82062AEC4BBF00275330 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98E82052AEC4BBF00275330 /* MainViewController.swift */; };
+		D98E82082AEC516600275330 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98E82072AEC516600275330 /* ResultViewController.swift */; };
 		D9F7064F2ADC0893006D7530 /* StapeSDK.docc in Sources */ = {isa = PBXBuildFile; fileRef = D9F7064E2ADC0893006D7530 /* StapeSDK.docc */; };
 		D9F7065C2ADC0893006D7530 /* StapeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F7065B2ADC0893006D7530 /* StapeTests.swift */; };
 		D9F7065D2ADC0893006D7530 /* StapeSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = D9F7064D2ADC0893006D7530 /* StapeSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -87,6 +89,8 @@
 		D98E81FF2AE5246D00275330 /* STFirebaseHook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STFirebaseHook.m; sourceTree = "<group>"; };
 		D98E82002AE5246D00275330 /* STFirebaseHook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STFirebaseHook.h; sourceTree = "<group>"; };
 		D98E82032AE526AF00275330 /* STSwizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STSwizzle.h; sourceTree = "<group>"; };
+		D98E82052AEC4BBF00275330 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		D98E82072AEC516600275330 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		D9F7064B2ADC0893006D7530 /* StapeSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = StapeSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9F7064D2ADC0893006D7530 /* StapeSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StapeSDK.h; sourceTree = "<group>"; };
 		D9F7064E2ADC0893006D7530 /* StapeSDK.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = StapeSDK.docc; sourceTree = "<group>"; };
@@ -226,6 +230,8 @@
 				D9F706852ADC0E37006D7530 /* Info.plist */,
 				D98E81F92AE4409500275330 /* ActionsController.swift */,
 				D98E81FB2AE440AA00275330 /* LogsViewController.swift */,
+				D98E82052AEC4BBF00275330 /* MainViewController.swift */,
+				D98E82072AEC516600275330 /* ResultViewController.swift */,
 			);
 			path = StapeSampleApp;
 			sourceTree = "<group>";
@@ -530,6 +536,8 @@
 				D98E81FA2AE4409500275330 /* ActionsController.swift in Sources */,
 				D9F7067A2ADC0E36006D7530 /* SceneDelegate.swift in Sources */,
 				D98E81FC2AE440AA00275330 /* LogsViewController.swift in Sources */,
+				D98E82062AEC4BBF00275330 /* MainViewController.swift in Sources */,
+				D98E82082AEC516600275330 /* ResultViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

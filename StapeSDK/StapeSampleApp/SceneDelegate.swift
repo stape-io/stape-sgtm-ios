@@ -3,7 +3,7 @@
 //  StapeSampleApp
 //
 //  Created by Deszip on 15.10.2023.
-//  Copyright © 2023 CocoaPods. All rights reserved.
+//  Copyright © 2023 Stape. All rights reserved.
 //
 
 import UIKit
