@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Wrx-UA-BDf">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -17,17 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UBe-fP-188">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="KhX-5k-Kjc"/>
-                                </constraints>
-                                <items>
-                                    <navigationItem title="Stape" id="UvX-8L-y7f"/>
-                                </items>
-                            </navigationBar>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" alignment="top" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="2b8-hP-cKf">
-                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
                                 <subviews>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pOG-oE-gaE">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="200"/>
@@ -39,13 +30,13 @@
                                         </connections>
                                     </containerView>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="27F-ZU-FIc">
-                                        <rect key="frame" x="0.0" y="201.00000000000003" width="393" height="278.66666666666674"/>
+                                        <rect key="frame" x="0.0" y="201.00000000000003" width="393" height="256.66666666666674"/>
                                         <connections>
                                             <segue destination="5v8-f8-I1W" kind="embed" id="Ihz-4D-GZw"/>
                                         </connections>
                                     </containerView>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gk7-s5-S5k">
-                                        <rect key="frame" x="0.0" y="480.66666666666663" width="393" height="278.33333333333337"/>
+                                        <rect key="frame" x="0.0" y="458.66666666666663" width="393" height="256.33333333333337"/>
                                         <connections>
                                             <segue destination="AWf-rh-llc" kind="embed" id="yoa-0c-5It"/>
                                         </connections>
@@ -69,26 +60,25 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="UBe-fP-188" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="3Zo-b6-xvC"/>
-                            <constraint firstItem="UBe-fP-188" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Bbu-YA-CCi"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="2b8-hP-cKf" secondAttribute="bottom" id="Evx-61-JhS"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2b8-hP-cKf" secondAttribute="trailing" id="LAX-IK-oTh"/>
                             <constraint firstItem="2b8-hP-cKf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="feX-BO-yxY"/>
-                            <constraint firstItem="UBe-fP-188" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="jq6-kM-VzD"/>
-                            <constraint firstItem="2b8-hP-cKf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="wzb-AF-YC0"/>
+                            <constraint firstItem="2b8-hP-cKf" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="wzb-AF-YC0"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
+                    <navigationItem key="navigationItem" title="Stape" id="wun-rq-DT9"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-106" y="4"/>
+            <point key="canvasLocation" x="-106.10687022900763" y="3.5211267605633805"/>
         </scene>
         <!--Logs View Controller-->
         <scene sceneID="vtd-Io-9e5">
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="AWf-rh-llc" customClass="LogsViewController" customModule="StapeSampleApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="x6j-hh-zhn">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="278.33333333333331"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="256.33333333333331"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mt0-YC-0k0">
@@ -116,19 +106,35 @@
             </objects>
             <point key="canvasLocation" x="-105" y="492"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="paU-fg-gzS">
+            <objects>
+                <navigationController id="Wrx-UA-BDf" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="i0l-S5-Yuf">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="hgR-xF-eu8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RDl-eI-LjH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-225" y="-751"/>
+        </scene>
         <!--Actions Controller-->
         <scene sceneID="3FX-1N-9g3">
             <objects>
                 <tableViewController id="rgo-NT-cSb" customClass="ActionsController" customModule="StapeSampleApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="s7V-6d-amX">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="s7V-6d-amX">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <sections>
-                            <tableViewSection id="JtZ-P0-0gX">
+                            <tableViewSection headerTitle="Actions" id="JtZ-P0-0gX">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="okQ-f8-wAc" detailTextLabel="mox-aQ-t9E" style="IBUITableViewCellStyleSubtitle" id="unP-3I-Bz5">
-                                        <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="55.333332061767578" width="393" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="unP-3I-Bz5" id="2wZ-cZ-sXE">
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
@@ -152,7 +158,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="AvK-g5-iPQ" detailTextLabel="Gbe-ec-w6m" style="IBUITableViewCellStyleSubtitle" id="e85-SN-tsl">
-                                        <rect key="frame" x="0.0" y="93.666667938232422" width="393" height="43.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="99" width="393" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="e85-SN-tsl" id="9RH-mO-kfg">
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
@@ -176,7 +182,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="5Jz-fq-HhO" detailTextLabel="UMJ-Xq-aa7" style="IBUITableViewCellStyleSubtitle" id="fiV-Dy-7gN">
-                                        <rect key="frame" x="0.0" y="137.33333587646484" width="393" height="43.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="142.66666793823242" width="393" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fiV-Dy-7gN" id="2fX-hV-ea3">
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
@@ -217,7 +223,7 @@
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="5v8-f8-I1W" customClass="ResultViewController" customModule="StapeSampleApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jzp-ed-ewC">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="278.66666666666669"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="256.66666666666669"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7H8-gh-wuR">

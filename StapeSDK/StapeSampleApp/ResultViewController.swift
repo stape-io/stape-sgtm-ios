@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import StapeSDK
 
 class ResultViewController: UIViewController {
 
@@ -21,7 +22,17 @@ class ResultViewController: UIViewController {
     @objc
     func handleResult(notification: Notification) {
         DispatchQueue.main.async {
-            self.resultTextView.text = String(describing: notification.userInfo) + "\n" + self.resultTextView.text
+            var log = ""
+            if let result = notification.userInfo?["result"] as? Result<Stape.EventResponse, Stape.SendError> {
+                switch result {
+                case .success(let response): 
+                    log.append(response.payload.description)
+                case .failure(let error):
+                    log.append(error.localizedDescription)
+                }
+            }
+            
+            self.resultTextView.text = log + "\n" + self.resultTextView.text
         }
     }
     
