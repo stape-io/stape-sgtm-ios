@@ -22,6 +22,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         Stape.send(event: Stape.Event(name: "foo", payload: ["bar": "baz"]))
         
+        let e = Stape.Event(name: "foo", payload: [
+            .clientID: "bar",
+            .language: "foo"
+        ])
+        Stape.send(event: e) { result in
+            //...
+        }
+        
         return true
     }
 
