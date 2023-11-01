@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'StapeSDK'
-  s.version          = '0.1.0'
+  s.version          = '1.0.0'
   s.summary          = 'StapeSDK to use with Stape.io service'
   s.description      = 'Awesome Stape.io SDK, use it for fun and profit!'
   s.homepage         = 'https://stape.io'
@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   s.author           = { 'Stape' => 'info@stape.com' }
   s.source           = { :git => 'https://github.com/stape-io/stape-sgtm-ios.git', :tag => s.version.to_s }
 
-  s.ios.deployment_target = '15.0'
+  s.ios.deployment_target = '14.0'
 
   s.source_files = 'StapeSDK/StapeSDK/**/*'
 end
