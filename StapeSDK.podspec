@@ -7,6 +7,7 @@ Pod::Spec.new do |s|
   s.license          = { :type => 'Apache', :file => 'LICENSE' }
   s.author           = { 'Stape' => 'info@stape.com' }
   s.source           = { :git => 'https://github.com/stape-io/stape-sgtm-ios.git', :tag => s.version.to_s }
+  s.swift_version    = '4.0'
 
   s.ios.deployment_target = '14.0'
 
