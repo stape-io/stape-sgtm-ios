@@ -10,7 +10,7 @@ First is a simple event send which allows to compose an event and send it to the
 SDK API provides a response from the backend mapped to a simple model that contains serialized response fields.
 Second is a mechanism that tracks events dispatched by the Firebase event SDK.
 It hooks Firebase event dispatch and maps Firebase event to Stape event.
-Afte that it sends it as an ordinary event.
+After that it sends it as an ordinary event.
 
 ## Usage
 
@@ -40,10 +40,7 @@ After that SDK is ready to use.
 To send an event you create instance of `Stape.Event`:
 
 ```
-let e = Stape.Event(name: "foo", payload: [
-    .clientID: "bar",
-    .language: "foo"
-])
+let e = Stape.Event(name: "foo", payload: ["bar": "baz"])
 ```
 
 and send it by passing to the `Stape.send()` method:
@@ -61,6 +58,31 @@ If event was successfullly sent result contains `Stape.EventResponse` instance.
 Response provides a `payload` property which is a dictionary 
 with serialized key/value pairs got from the backend.
 
+`Stape.Event` struct provides a number of predefined keys for convenience.
+Keys are listed in `Stape.Event.Keys` enum:
+
+```
+public enum Key: String {
+    case clientID       = "client_id"
+    case idfa           = "idfa"
+    case currency       = "currency"
+    case ipOverride     = "ip_override"
+    case language       = "language"
+    case pageEncoding   = "page_encoding"
+    case pageHostname   = "page_hostname"
+    case pageLocation   = "page_location"
+    case pagePath       = "page_path"
+}
+```
+and can be used to compose event as follows:
+
+```
+let e = Stape.Event(name: "foo", payload: [
+    .clientID: "bar",
+    .language: "foo"
+])
+```
+
 ### Firebase hooking
 
 To start listening to Firebase events you need to call `Stape.startFBTracking()` method after the call to `Stape.start()`.
@@ -72,3 +94,7 @@ Stape SDK uses Apple os.log facility to log its actions.
 You can use `com.stape.logger` subsystem to filter Stape SDK logs.
 To learn more about Apple structured logging please refer to the officioal documentation:
 https://developer.apple.com/documentation/os/logging`
+
+## Feedback
+
+Let us know what do you think or what would you like to be improved by opening issue.
