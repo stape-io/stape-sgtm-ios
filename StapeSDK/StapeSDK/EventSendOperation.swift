@@ -87,7 +87,7 @@ class EventSendOperation: Operation {
     
     func finish() { processing = false }
     
-    private func buildRequest() -> URLRequest? {
+    private func    buildRequest() -> URLRequest? {
         guard let url = URL(string: self.config.domain.absoluteString.appending(self.config.endpoint)),
               var comps = URLComponents(url: url, resolvingAgainstBaseURL: true) else {
             return nil
