@@ -18,7 +18,7 @@ After that it sends it as an ordinary event.
 
 #### Cocoapods
 
-To install StapeSDK with Cocoapods just add this line to your Podfile: `pod StapeSDK` and run `pod install`.
+To install StapeSDK with Cocoapods just add this line to your Podfile: `pod 'StapeSDK'` and run `pod install`.
 
 #### SPM
 
