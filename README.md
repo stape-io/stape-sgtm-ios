@@ -16,6 +16,13 @@ After that it sends it as an ordinary event.
 
 ### Installation
 
+- Cocoapods
+To install StapeSDK with Cocoapods just add this line to your Podfile: `pod StapeSDK` and run `pod install`.
+
+- SPM
+For now SPM does not support packages with mixed ObjC/Swift code. We'll add SPM support once this will be included in SPM.
+Feature is already in review, you can track progress here: https://forums.swift.org/t/se-0403-package-manager-mixed-language-target-support/66202
+
 ### Connection
 
 To use Stape SDK you need to import it:
