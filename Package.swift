@@ -11,11 +11,11 @@ let package = Package(
     products: [
         .library(
             name: "StapeSDK",
-            targets: ["StapeSDK"]),
+            targets: ["StapeSDK"])
     ],
     targets: [
         .target(
             name: "StapeSDK",
-            path: "StapeSDK/StapeSDK"
+            path: "StapeSDK/StapeSDK")
     ]
 )
