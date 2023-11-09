@@ -67,6 +67,8 @@ If event was successfullly sent result contains `Stape.EventResponse` instance.
 Response provides a `payload` property which is a dictionary 
 with serialized key/value pairs got from the backend.
 
+Note that response handler is called on a non-main thread and you need to manually dispatch to main thread if needed.
+
 `Stape.Event` struct provides a number of predefined keys for convenience.
 Keys are listed in `Stape.Event.Keys` enum:
 
@@ -95,7 +97,12 @@ let e = Stape.Event(name: "foo", payload: [
 ### Firebase hooking
 
 To start listening to Firebase events you need to call `Stape.startFBTracking()` method after the call to `Stape.start()`.
-There is no way for now to get responses received for those events.
+
+There is a handlers API to get responses for Firebase events dispatched to Stape. It consists of a pair of methods to add and remove handler closures identified by keys:
+```swift
+public static func addFBEventHandler(_ handler: @escaping Completion, forKey key: String)
+public static func removeFBEventHandler(forKey key: String)
+```
 
 ### Logging
 
