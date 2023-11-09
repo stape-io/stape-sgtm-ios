@@ -17,21 +17,26 @@ class ResultViewController: UIViewController {
         super.viewDidLoad()
   
         NotificationCenter.default.addObserver(self, selector: #selector(handleResult), name: NSNotification.Name("EventResultNotification"), object: nil)
+        
+        Stape.addFBEventHandler({ self.display(result: $0) }, forKey: "ResultViewController")
     }
     
     @objc
     func handleResult(notification: Notification) {
+        if let result = notification.userInfo?["result"] as? Stape.EventResult {
+            self.display(result: result)
+        }
+    }
+    
+    private func display(result: Stape.EventResult) {
         DispatchQueue.main.async {
             var log = ""
-            if let result = notification.userInfo?["result"] as? Result<Stape.EventResponse, Stape.SendError> {
-                switch result {
-                case .success(let response): 
-                    log.append(response.payload.description)
-                case .failure(let error):
-                    log.append(error.localizedDescription)
-                }
+            switch result {
+            case .success(let response):
+                log.append(response.payload.description)
+            case .failure(let error):
+                log.append(error.localizedDescription)
             }
-            
             self.resultTextView.text = log + "\n" + self.resultTextView.text
         }
     }

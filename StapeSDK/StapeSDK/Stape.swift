@@ -11,8 +11,10 @@ import os
 
 public class Stape {
     
+    public typealias EventResult = Result<Stape.EventResponse, SendError>
+    public typealias Completion = (EventResult) -> Void
+    
     // Error types
-    public typealias Completion = (Result<Stape.EventResponse, SendError>) -> Void
     public enum SendError: Error {
         case networkFailure(Error)
         case serializationFailure
@@ -81,7 +83,9 @@ public class Stape {
             STFirebaseHook.installLogEventHook { name, parameters in
                 if let name = name as? String,
                    let payload = parameters as? [String: AnyHashable] {
-                    Stape.send(event: Stape.Event(name: name, payload: payload))
+                    Stape.send(event: Stape.Event(name: name, payload: payload)) { result in
+                        stape.fbHandlers.forEach { $0.value(result) }
+                    }
                 }
             }
             return self
@@ -96,11 +100,13 @@ public class Stape {
         }
     }
     
-    static var shared: Stape = { return Stape(apiCLient: APIClient()) }()
+    private static var shared: Stape = { return Stape(apiCLient: APIClient()) }()
     
     static let logger = Logger(subsystem: "com.stape.logger", category: "main")
     private var state: State = .idle
     private let apiCLient: APIClient
+    
+    private var fbHandlers: [String: Completion] = [:]
     
     init(apiCLient: APIClient) {
         self.state = .idle
@@ -113,24 +119,42 @@ public class Stape {
         shared.start(configuration: configuration)
     }
     
-    public func start(configuration: Configuration) {
-        state = state.handleStart(self, configuration: configuration)
-    }
-    
     public static func send(event: Event, completion: Completion? = nil) {
         shared.send(event: event, completion: completion)
-    }
-    
-    public func send(event: Event, completion: Completion? = nil) {
-        state = state.handleEvent(self, event: event, completion: completion)
     }
     
     public static func startFBTracking() {
         shared.startFBTracking()
     }
     
-    public func startFBTracking() {
+    public static func addFBEventHandler(_ handler: @escaping Completion, forKey key: String) {
+        shared.addFBEventHandler(handler, forKey: key)
+    }
+    
+    public static func removeFBEventHandler(forKey key: String) {
+        shared.removeFBEventHandler(forKey: key)
+    }
+    
+    // MARK: - Private API
+    
+    private func start(configuration: Configuration) {
+        state = state.handleStart(self, configuration: configuration)
+    }
+    
+    private func send(event: Event, completion: Completion? = nil) {
+        state = state.handleEvent(self, event: event, completion: completion)
+    }
+    
+    private func startFBTracking() {
         state = state.handleFBHookInstall(stape: self)
+    }
+    
+    private func addFBEventHandler(_ handler: @escaping Completion, forKey key: String) {
+        fbHandlers[key] = handler
+    }
+    
+    private func removeFBEventHandler(forKey key: String) {
+        fbHandlers.removeValue(forKey: key)
     }
     
 }
