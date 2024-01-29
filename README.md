@@ -1,16 +1,18 @@
 # ``StapeSDK``
 
-Stape SDK is an event based client for the Stape API.
-It allows to track and send events from your mobile app to the Stape backend.
-
 ## Overview
 
-SDK implements two main functional parts.
-First is a simple event send which allows to compose an event and send it to the backend.
-SDK API provides a response from the backend mapped to a simple model that contains serialized response fields.
+Stape sGTM SDK implements two main functional parts.
+
+First is a simple event sending which allows to compose an event and send it to Stape Data Client.
+
+SDK API provides a response from the Data Client mapped to a simple model that contains serialized response fields.
+
 Second is a mechanism that tracks events dispatched by the Firebase event SDK.
-It hooks Firebase event dispatch and maps Firebase event to Stape event.
-After that it sends it as an ordinary event.
+
+It hooks Firebase event dispatch and maps Firebase event to Stape Data Client.
+
+After that, it sends it as an ordinary event.
 
 ## Usage
 
@@ -22,12 +24,15 @@ To install StapeSDK with Cocoapods just add this line to your Podfile: `pod 'Sta
 
 #### SPM
 
-For now SPM does not support packages with mixed ObjC/Swift code. We'll add SPM support once this will be included in SPM.
+For now, SPM does not support packages with mixed ObjC/Swift code. 
+
+We'll add SPM support once this is included in SPM.
+
 Feature is already in review, you can track progress here: https://forums.swift.org/t/se-0403-package-manager-mixed-language-target-support/66202
 
 ### Connection
 
-To use Stape SDK you need to import it:
+To use Stape SDK, you need to import it:
 
 ```swift
 import StapeSDK
@@ -63,11 +68,14 @@ Stape.send(event: e) { result in
 }
 ```
 `Stape.send()` method provides a callback that is called after event got response and passed a result.
-If event was successfullly sent result contains `Stape.EventResponse` instance.
+
+If event was successfully sent result contains `Stape.EventResponse` instance.
+
 Response provides a `payload` property which is a dictionary 
 with serialized key/value pairs got from the backend.
 
-Note that response handler is called on a non-main thread and you need to manually dispatch to main thread if needed.
+Note that response handler is called on a non-main thread,
+and you need to manually dispatch to the main thread if needed.
 
 `Stape.Event` struct provides a number of predefined keys for convenience.
 Keys are listed in `Stape.Event.Keys` enum:
@@ -96,9 +104,12 @@ let e = Stape.Event(name: "foo", payload: [
 
 ### Firebase hooking
 
-To start listening to Firebase events you need to call `Stape.startFBTracking()` method after the call to `Stape.start()`.
+To start listening to Firebase events,
+you need to call `Stape.startFBTracking()` method after the call to `Stape.start()`.
 
-There is a handlers API to get responses for Firebase events dispatched to Stape. It consists of a pair of methods to add and remove handler closures identified by keys:
+There is a handlers API to get responses for Firebase events dispatched to Stape Data Client. 
+
+It consists of a pair of methods to add and remove handler closures identified by keys:
 ```swift
 public static func addFBEventHandler(_ handler: @escaping Completion, forKey key: String)
 public static func removeFBEventHandler(forKey key: String)
@@ -107,10 +118,12 @@ public static func removeFBEventHandler(forKey key: String)
 ### Logging
 
 Stape SDK uses Apple os.log facility to log its actions.
+
 You can use `com.stape.logger` subsystem to filter Stape SDK logs.
-To learn more about Apple structured logging please refer to the official documentation:
+
+To learn more about Apple structured logging, please refer to the official documentation:
 https://developer.apple.com/documentation/os/logging`
 
 ## Feedback
 
-Let us know what do you think or what would you like to be improved by opening issue.
+Let us know what you think or what would like to be improved by opening issue.
