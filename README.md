@@ -1,4 +1,4 @@
-# ``StapeSDK``
+# Stape sGTM iOS SDK
 
 ## Overview
 
